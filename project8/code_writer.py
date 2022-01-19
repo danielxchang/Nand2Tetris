@@ -9,18 +9,63 @@ class CodeWriter:
     def __init__(self, file_name, file_path):
         self.file_path = file_path
         self.file_name = file_name
+        self.current_file = None
         self.file = open(f"{self.file_path + '/' + self.file_name if self.file_path else self.file_name}.asm", mode='w')
         self.next_number = 0
+        self.call_integer = 0
+        self.call_stack = []
+        self.count = 0
+
+    def set_current_file(self, file_name):
+        self.current_file = file_name
 
     def write_init(self):
-        # Write later
-        pass
+        commands = [
+            '@256',
+            'D=A',
+            '@SP',
+            'M=D',
+            '@LCL',
+            'M=-A',
+            '@ARG',
+            'M=-A',
+            '@THIS',
+            'M=-A',
+            '@THAT',
+            'M=-A',
+        ]
+        # commands = [
+        #     '@256',
+        #     'D=A',
+        #     '@SP',
+        #     'M=D',
+        #     '@300',
+        #     'D=A',
+        #     '@LCL',
+        #     'M=D',
+        #     '@400',
+        #     'D=A',
+        #     '@ARG',
+        #     'M=D',
+        #     '@3000',
+        #     'D=A',
+        #     '@THIS',
+        #     'M=D',
+        #     '@3010',
+        #     'D=A',
+        #     '@THAT',
+        #     'M=D'
+        # ]
+        self.append_code(commands)
+        self.write_call('Sys.init', 0)
+        # self.call_stack.append('Sys.init')
 
     def append_code(self, commands):
         for command in commands:
             self.file.write(command + "\n")
 
     def write_comment(self, command):
+        self.count += 1
         self.file.write(f"// {command.strip()}\n")
 
     def write_arithmetic(self, vm_command):
@@ -195,10 +240,10 @@ class CodeWriter:
                 commands.append('@SP')
                 commands.append('AM=M-1')
                 commands.append('D=M')
-                commands.append(f'@{self.file_name}.{index}')
+                commands.append(f'@{self.current_file}.{index}')
                 commands.append('M=D')
             elif command == 'push':
-                commands.append(f'@{self.file_name}.{index}')
+                commands.append(f'@{self.current_file}.{index}')
                 commands.append('D=M')
                 commands.append('@SP')
                 commands.append('A=M')
@@ -209,10 +254,14 @@ class CodeWriter:
         self.append_code(commands)
 
     def write_label(self, label):
+        if self.call_stack:
+            label = f"{self.call_stack[-1]}${label}"
         commands = [f'({label})']
         self.append_code(commands)
 
     def write_go_to(self, label):
+        if self.call_stack:
+            label = f"{self.call_stack[-1]}${label}"
         commands = [
             f'@{label}',
             '0;JMP'
@@ -220,6 +269,8 @@ class CodeWriter:
         self.append_code(commands)
 
     def write_if(self, label):
+        if self.call_stack:
+            label = f"{self.call_stack[-1]}${label}"
         commands = [
             '@SP',
             'AM=M-1',
@@ -230,10 +281,130 @@ class CodeWriter:
         self.append_code(commands)
 
     def write_function(self, function_name, num_vars):
-        pass
+        self.call_stack.append(function_name)
+        commands = [
+            f'({function_name})',
+            f'@{num_vars}',
+            'D=A',
+            '@SP',
+            'M=M+D',
+            f'(NVARSLOOP:{function_name})',
+            f'@ENDNVARSLOOP:{function_name}',
+            'D;JEQ',
+            'D=D-1',
+            '@LCL',
+            'A=M+D',
+            'M=0',
+            f'@NVARSLOOP:{function_name}',
+            '0;JMP',
+            f'(ENDNVARSLOOP:{function_name})'
+        ]
+        self.append_code(commands)
 
     def write_call(self, function_name, num_args):
-        pass
+        self.call_integer += 1
+        return_label = f"{self.call_stack[-1] if self.call_stack else ''}$ret.{self.call_integer}"
+        commands = [
+            f'@{return_label}',
+            'D=A',
+            '@SP',
+            'A=M',
+            'M=D',
+            '@SP',
+            'M=M+1',
+            '@LCL',
+            'D=M',
+            '@SP',
+            'A=M',
+            'M=D',
+            '@SP',
+            'M=M+1',
+            '@ARG',
+            'D=M',
+            '@SP',
+            'A=M',
+            'M=D',
+            '@SP',
+            'M=M+1',
+            '@THIS',
+            'D=M',
+            '@SP',
+            'A=M',
+            'M=D',
+            '@SP',
+            'M=M+1',
+            '@THAT',
+            'D=M',
+            '@SP',
+            'A=M',
+            'M=D',
+            '@SP',
+            'MD=M+1',
+            '@LCL',
+            'M=D',
+            '@5',
+            'D=D-A',
+            f'@{num_args}',
+            'D=D-A',
+            '@ARG',
+            'M=D',
+            f'@{function_name}',
+            '0;JMP',
+            f'({return_label})'
+        ]
+        self.append_code(commands)
+
+    def write_return(self):
+        commands = [
+            '@LCL',
+            'D=M',
+            '@R13',
+            'M=D',
+            '@5',
+            'A=D-A',
+            'D=M',
+            '@R14',
+            'M=D',
+            '@SP',
+            'AM=M-1',
+            'D=M',
+            '@ARG',
+            'A=M',
+            'M=D',
+            'D=A+1',
+            '@SP',
+            'M=D',
+            '@R13',
+            'A=M-1',
+            'D=M',
+            '@THAT',
+            'M=D',
+            '@2',
+            'D=A',
+            '@R13',
+            'A=M-D',
+            'D=M',
+            '@THIS',
+            'M=D',
+            '@3',
+            'D=A',
+            '@R13',
+            'A=M-D',
+            'D=M',
+            '@ARG',
+            'M=D',
+            '@4',
+            'D=A',
+            '@R13',
+            'A=M-D',
+            'D=M',
+            '@LCL',
+            'M=D',
+            '@R14',
+            'A=M',
+            '0;JMP'
+        ]
+        self.append_code(commands)
 
     def close_file(self):
         self.file.close()
