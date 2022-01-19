@@ -25,8 +25,9 @@ class Parser:
     def advance(self):
         self.current_command = self.file.readline().strip()
         while self.current_command and (self.current_command == '\n' or self.current_command[0] == '/'):
-            self.current_command = self.file.readline()
-        return self.current_command.split("/")[0].strip()
+            self.current_command = self.file.readline().strip()
+        if self.current_command:
+            self.current_command = self.current_command.split("/")[0].strip()
 
     def close_file(self):
         self.file.close()
