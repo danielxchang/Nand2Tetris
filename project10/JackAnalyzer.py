@@ -1,6 +1,7 @@
 import sys
 import os
 from Tokenizer import Tokenizer
+from CompilationEngine import CompilationEngine
 
 
 # Gathers jack file(s) from program_input parameter and returns a list of jack files to be tokenized
@@ -31,6 +32,7 @@ def run_jack_analyzer(jack_files):
                 tokenizer.write_to_xml(token)
         tokenizer.close_xml_file()
 
+        comp_engine = CompilationEngine(tokenizer.xml_file_name)
 
 
 if __name__ == "__main__":

@@ -70,7 +70,8 @@ class Tokenizer:
                     formatted_line = line.split("//")[0].strip()
                     if formatted_line:
                         self.tokens_line.append(formatted_line)
-        self.xml_file = open(f"{jack_file.split('.')[0]}T.xml", 'w')
+        self.xml_file_name = f"{jack_file.split('.')[0]}T.xml"
+        self.xml_file = open(self.xml_file_name, 'w')
         self.write_to_xml("<tokens>")
         self.current_token = None
 
