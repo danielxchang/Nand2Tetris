@@ -136,18 +136,10 @@ class Tokenizer:
 
 if __name__ == "__main__":
     tokenizer = Tokenizer(sys.argv[1])
-    # tokenizer.current_token = 'let s = "string constant";'
-    # print(tokenizer.token_type())
-    # for token_line in tokenizer.tokens_line:
-    #     tokenizer.current_token = token_line
-    #     tokens = tokenizer.token_type()
-    #     for token in tokens:
-    #         category = token[1].lower()
-    #         print(f"<{category}> {token[0]} </{category}>")
-
-
-
-
-
-
-
+    while tokenizer.has_more_tokens():
+        tokenizer.advance()
+        tokens = tokenizer.token_type()
+        for token_tuple in tokens:
+            token = tokenizer.get_token_string(token_tuple)
+            tokenizer.write_to_xml(token)
+    tokenizer.close_xml_file()
