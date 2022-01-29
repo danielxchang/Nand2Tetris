@@ -42,6 +42,7 @@ class CompilationEngine:
         self.advance_token(1)
         self.class_name = self.current_token.split()[2]
         self.advance_token(2)
+
         field_variables = 0
         static_variables = 0
         while self.current_token.split()[1] in ['static', 'field']:
@@ -74,10 +75,7 @@ class CompilationEngine:
         subroutine_type = self.current_token.split()[1]
 
         # compiling "('constructor' | 'function' | 'method') ('void' | <type>) <subroutineName> '('"
-        self.advance_token(1)
-
-        # return_type = self.current_token.split()[1]
-        self.advance_token(1)
+        self.advance_token(2)
         function_name = f"{self.class_name}.{self.current_token.split()[2]}"
         self.advance_token(2)
 
@@ -87,7 +85,7 @@ class CompilationEngine:
 
     def compile_parameter_list(self, is_definition, f_name):
         n_args = 0
-        if is_definition:  # When function declared
+        if is_definition:  # When function declared/defined
             while not self.regex_match(')'):
                 n_args += 1
                 self.advance_token(1)
@@ -125,11 +123,11 @@ class CompilationEngine:
 
         # Advancing beyond variable declarations
         self.advance_token(1)
-
         while self.regex_match(","):
             self.advance_token(2)
             n_locals += 1
         self.advance_token(1)
+
         return n_locals
 
     def compile_statements(self):
@@ -139,7 +137,6 @@ class CompilationEngine:
                         'do': self.compile_do,
                         'return': self.compile_return
                         }
-
         while True:
             found_match = False
             for kw, fn in kw_functions.items():
@@ -154,11 +151,10 @@ class CompilationEngine:
         self.advance_token(1)  # Advance past 'let'
         identifier_parts = self.current_token.split()[1:-1]
         segment = identifier_parts[0]
-        var_name = identifier_parts[1]
         index = identifier_parts[3]
 
         self.advance_token(1)
-        if self.regex_match("["):
+        if self.regex_match("["):  # Accessing an array
             self.advance_token(1)
             self.compile_expression()
             self.vm_writer.write_push(segment, index)
@@ -184,10 +180,11 @@ class CompilationEngine:
         true_label = f"IF_TRUE{self.statements_tracker['IF']}"
         false_label = f"IF_FALSE{self.statements_tracker['IF']}"
         end_label = f"IF_END{self.statements_tracker['IF']}"
-        self.advance_token(2) # Advancing beyond 'if' '('
+
+        self.advance_token(2)  # Advancing beyond 'if' '('
         self.compile_expression()
         self.vm_writer.write_if(true_label)
-        self.advance_token(2) # Advancing beyond ')' '{'
+        self.advance_token(2)  # Advancing beyond ')' '{'
         self.vm_writer.write_goto(false_label)
         self.vm_writer.write_label(true_label)
         self.compile_statements()
@@ -208,15 +205,17 @@ class CompilationEngine:
         self.statements_tracker['WHILE'] += 1
         start_label = f"WHILE_EXP{self.statements_tracker['WHILE']}"
         end_label = f"WHILE_END{self.statements_tracker['WHILE']}"
+
         self.advance_token(2)  # Advancing past "while ("
         self.vm_writer.write_label(start_label)
         self.compile_expression()
         self.advance_token(2)  # Advancing past ')' '{'
+
         self.vm_writer.write_unary("~")
         self.vm_writer.write_if(end_label)
+
         self.compile_statements()
         self.vm_writer.write_goto(start_label)
-        # self.print_current()
         self.vm_writer.write_label(end_label)
         self.advance_token(1)
 
@@ -234,13 +233,9 @@ class CompilationEngine:
             var_parts = self.current_token.split()[1:-1]
             command = var_parts[-1]
             self.vm_writer.write_push(var_parts[0], var_parts[-2])
-
             self.advance_token(1)
             command = command + self.current_token.split()[1]  # Appending '.' to command
             self.advance_token(1)
-        # elif category == 'field':
-        #     command = f"{self.class_name}."
-        #     self.vm_writer.write_push(category, 0)  # MAYBE DELETE OR CHANGE
         else:
             command = f"{self.class_name}."
             self.vm_writer.write_push('pointer', 0)  # MAYBE DELETE OR CHANGE
@@ -253,11 +248,11 @@ class CompilationEngine:
 
         self.vm_writer.write_call(command, n_expressions)
         self.advance_token(2)
-
         self.vm_writer.write_pop('temp', 0)
 
     def compile_return(self):
         self.advance_token(1)
+
         if not self.regex_match(';'):  # Compile expression if exists
             if self.regex_match('this'):  # Returning this
                 self.vm_writer.write_push("pointer", 0)
@@ -266,6 +261,7 @@ class CompilationEngine:
                 self.compile_expression()
         else:
             self.vm_writer.write_push("constant", 0)
+
         self.vm_writer.write_return()  # Compile 'return'
         self.advance_token(1)
 
@@ -302,8 +298,8 @@ class CompilationEngine:
                 use_type = token_parts[2]
                 index = token_parts[3] if len(token_parts) >= 4 else None
                 class_name = token_parts[4] if len(token_parts) >= 5 else None
-            self.advance_token(1)
 
+            self.advance_token(1)
             paren_match = self.regex_match('(')
             dot_match = self.regex_match('.')
             arr_match = self.regex_match('[')
@@ -313,12 +309,9 @@ class CompilationEngine:
                     self.compile_expression()
                     self.vm_writer.write_push(segment, index)
                     self.vm_writer.write_arithmetic('+')
-                    # self.vm_writer.write_pop("temp", 0)
                     self.vm_writer.write_pop("pointer", 1)
-                    # self.vm_writer.write_push("temp", 0)
                     self.vm_writer.write_push("that", 0)
                     self.advance_token(1)
-                    # self.print_current()
                 else:
                     if paren_match or dot_match:  # Compiles subroutineCall
                         if dot_match:  # if external subroutineCall
@@ -350,7 +343,6 @@ class CompilationEngine:
             self.compile_term()
             self.vm_writer.write_unary(unary_op)
         elif self.current_token.startswith('<integerConstant>'):
-            # self.print_current()
             self.vm_writer.write_push("constant", self.current_token.split()[1])
             self.advance_token(1)
         elif self.current_token.startswith('<stringConstant>'):
@@ -377,7 +369,7 @@ if __name__ == "__main__":
     vm_file = open(xml_file.replace("T.xml", ".vm"), 'w')
     comp_engine = CompilationEngine(xml_file, vm_file)
     while comp_engine.current_token != '</tokens>':
-        comp_engine.advance_token()
+        comp_engine.advance_token(1)
         if comp_engine.regex_match('class'):
             comp_engine.compile_class()
     vm_file.close()
