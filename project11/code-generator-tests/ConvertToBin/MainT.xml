@@ -1,0 +1,226 @@
+<tokens>
+<keyword> class </keyword>
+<identifier> class Main defined </identifier>
+<symbol> { </symbol>
+<keyword> function </keyword>
+<keyword> void </keyword>
+<identifier> subroutine main defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<identifier> var value defined 0 </identifier>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Main used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine fillMemory used </identifier>
+<symbol> ( </symbol>
+<integerConstant> 8001 </integerConstant>
+<symbol> , </symbol>
+<integerConstant> 16 </integerConstant>
+<symbol> , </symbol>
+<symbol> - </symbol>
+<integerConstant> 1 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var value used 0 int </identifier>
+<symbol> = </symbol>
+<identifier> class Memory used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine peek used </identifier>
+<symbol> ( </symbol>
+<integerConstant> 8000 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Main used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine convert used </identifier>
+<symbol> ( </symbol>
+<identifier> var value used 0 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> function </keyword>
+<keyword> void </keyword>
+<identifier> subroutine convert defined </identifier>
+<symbol> ( </symbol>
+<identifier> arg value defined 0 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<identifier> var mask defined 0 </identifier>
+<symbol> , </symbol>
+<identifier> var position defined 1 </identifier>
+<symbol> ; </symbol>
+<identifier> var loop defined 2 </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var loop used 2 boolean </identifier>
+<symbol> = </symbol>
+<keyword> true </keyword>
+<symbol> ; </symbol>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<identifier> var loop used 2 boolean </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var position used 1 int </identifier>
+<symbol> = </symbol>
+<identifier> var position used 1 int </identifier>
+<symbol> + </symbol>
+<integerConstant> 1 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var mask used 0 int </identifier>
+<symbol> = </symbol>
+<identifier> class Main used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine nextMask used </identifier>
+<symbol> ( </symbol>
+<identifier> var mask used 0 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<symbol> ~ </symbol>
+<symbol> ( </symbol>
+<identifier> var position used 1 int </identifier>
+<symbol> &gt; </symbol>
+<integerConstant> 16 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<symbol> ~ </symbol>
+<symbol> ( </symbol>
+<symbol> ( </symbol>
+<identifier> arg value used 0 int </identifier>
+<symbol> &amp; </symbol>
+<identifier> var mask used 0 int </identifier>
+<symbol> ) </symbol>
+<symbol> = </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> class Memory used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine poke used </identifier>
+<symbol> ( </symbol>
+<integerConstant> 8000 </integerConstant>
+<symbol> + </symbol>
+<identifier> var position used 1 int </identifier>
+<symbol> , </symbol>
+<integerConstant> 1 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> class Memory used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine poke used </identifier>
+<symbol> ( </symbol>
+<integerConstant> 8000 </integerConstant>
+<symbol> + </symbol>
+<identifier> var position used 1 int </identifier>
+<symbol> , </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var loop used 2 boolean </identifier>
+<symbol> = </symbol>
+<keyword> false </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> function </keyword>
+<keyword> int </keyword>
+<identifier> subroutine nextMask defined </identifier>
+<symbol> ( </symbol>
+<identifier> arg mask defined 0 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> arg mask used 0 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> return </keyword>
+<integerConstant> 1 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> return </keyword>
+<identifier> arg mask used 0 int </identifier>
+<symbol> * </symbol>
+<integerConstant> 2 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<keyword> function </keyword>
+<keyword> void </keyword>
+<identifier> subroutine fillMemory defined </identifier>
+<symbol> ( </symbol>
+<identifier> arg startAddress defined 0 </identifier>
+<symbol> , </symbol>
+<identifier> arg length defined 1 </identifier>
+<symbol> , </symbol>
+<identifier> arg value defined 2 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<identifier> arg length used 1 int </identifier>
+<symbol> &gt; </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> class Memory used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine poke used </identifier>
+<symbol> ( </symbol>
+<identifier> arg startAddress used 0 int </identifier>
+<symbol> , </symbol>
+<identifier> arg value used 2 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> arg length used 1 int </identifier>
+<symbol> = </symbol>
+<identifier> arg length used 1 int </identifier>
+<symbol> - </symbol>
+<integerConstant> 1 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> arg startAddress used 0 int </identifier>
+<symbol> = </symbol>
+<identifier> arg startAddress used 0 int </identifier>
+<symbol> + </symbol>
+<integerConstant> 1 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+</tokens>

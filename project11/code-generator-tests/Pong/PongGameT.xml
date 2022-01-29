@@ -1,0 +1,594 @@
+<tokens>
+<keyword> class </keyword>
+<identifier> class PongGame defined </identifier>
+<symbol> { </symbol>
+<identifier> static instance defined 0 </identifier>
+<symbol> ; </symbol>
+<identifier> field bat defined 0 </identifier>
+<symbol> ; </symbol>
+<identifier> field ball defined 1 </identifier>
+<symbol> ; </symbol>
+<identifier> field wall defined 2 </identifier>
+<symbol> ; </symbol>
+<identifier> field exit defined 3 </identifier>
+<symbol> ; </symbol>
+<identifier> field score defined 4 </identifier>
+<symbol> ; </symbol>
+<identifier> field lastWall defined 5 </identifier>
+<symbol> ; </symbol>
+<identifier> field batWidth defined 6 </identifier>
+<symbol> ; </symbol>
+<keyword> constructor </keyword>
+<identifier> PongGame </identifier>
+<identifier> subroutine new defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine clearScreen used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field batWidth used 6 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 50 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field bat used 0 Bat </identifier>
+<symbol> = </symbol>
+<identifier> class Bat used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine new used </identifier>
+<symbol> ( </symbol>
+<integerConstant> 230 </integerConstant>
+<symbol> , </symbol>
+<integerConstant> 229 </integerConstant>
+<symbol> , </symbol>
+<identifier> field batWidth used 6 int </identifier>
+<symbol> , </symbol>
+<integerConstant> 7 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field ball used 1 Ball </identifier>
+<symbol> = </symbol>
+<identifier> class Ball used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine new used </identifier>
+<symbol> ( </symbol>
+<integerConstant> 253 </integerConstant>
+<symbol> , </symbol>
+<integerConstant> 222 </integerConstant>
+<symbol> , </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> , </symbol>
+<integerConstant> 511 </integerConstant>
+<symbol> , </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> , </symbol>
+<integerConstant> 229 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> field ball used 1 Ball </identifier>
+<symbol> . </symbol>
+<identifier> subroutine setDestination used </identifier>
+<symbol> ( </symbol>
+<integerConstant> 400 </integerConstant>
+<symbol> , </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine drawRectangle used </identifier>
+<symbol> ( </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> , </symbol>
+<integerConstant> 238 </integerConstant>
+<symbol> , </symbol>
+<integerConstant> 511 </integerConstant>
+<symbol> , </symbol>
+<integerConstant> 240 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Output used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine moveCursor used </identifier>
+<symbol> ( </symbol>
+<integerConstant> 22 </integerConstant>
+<symbol> , </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Output used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine printString used </identifier>
+<symbol> ( </symbol>
+<stringConstant> "Score: 0" </stringConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field exit used 3 boolean </identifier>
+<symbol> = </symbol>
+<keyword> false </keyword>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field score used 4 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field wall used 2 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field lastWall used 5 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<keyword> this </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine dispose defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> field bat used 0 Bat </identifier>
+<symbol> . </symbol>
+<identifier> subroutine dispose used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> field ball used 1 Ball </identifier>
+<symbol> . </symbol>
+<identifier> subroutine dispose used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Memory used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine deAlloc used </identifier>
+<symbol> ( </symbol>
+<keyword> this </keyword>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> function </keyword>
+<keyword> void </keyword>
+<identifier> subroutine newInstance defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> static instance used 0 PongGame </identifier>
+<symbol> = </symbol>
+<identifier> class PongGame used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine new used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> function </keyword>
+<identifier> PongGame </identifier>
+<identifier> subroutine getInstance defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> return </keyword>
+<identifier> static instance used 0 PongGame </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine run defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<identifier> var key defined 0 </identifier>
+<symbol> ; </symbol>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<symbol> ~ </symbol>
+<identifier> field exit used 3 boolean </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<symbol> ( </symbol>
+<identifier> var key used 0 char </identifier>
+<symbol> = </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ) </symbol>
+<symbol> &amp; </symbol>
+<symbol> ( </symbol>
+<symbol> ~ </symbol>
+<identifier> field exit used 3 boolean </identifier>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var key used 0 char </identifier>
+<symbol> = </symbol>
+<identifier> class Keyboard used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine keyPressed used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> field bat used 0 Bat </identifier>
+<symbol> . </symbol>
+<identifier> subroutine move used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> subroutine moveBall used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Sys used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine wait used </identifier>
+<symbol> ( </symbol>
+<integerConstant> 50 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> var key used 0 char </identifier>
+<symbol> = </symbol>
+<integerConstant> 130 </integerConstant>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> field bat used 0 Bat </identifier>
+<symbol> . </symbol>
+<identifier> subroutine setDirection used </identifier>
+<symbol> ( </symbol>
+<integerConstant> 1 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> var key used 0 char </identifier>
+<symbol> = </symbol>
+<integerConstant> 132 </integerConstant>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> field bat used 0 Bat </identifier>
+<symbol> . </symbol>
+<identifier> subroutine setDirection used </identifier>
+<symbol> ( </symbol>
+<integerConstant> 2 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> var key used 0 char </identifier>
+<symbol> = </symbol>
+<integerConstant> 140 </integerConstant>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field exit used 3 boolean </identifier>
+<symbol> = </symbol>
+<keyword> true </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<symbol> ( </symbol>
+<symbol> ~ </symbol>
+<symbol> ( </symbol>
+<identifier> var key used 0 char </identifier>
+<symbol> = </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> &amp; </symbol>
+<symbol> ( </symbol>
+<symbol> ~ </symbol>
+<identifier> field exit used 3 boolean </identifier>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var key used 0 char </identifier>
+<symbol> = </symbol>
+<identifier> class Keyboard used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine keyPressed used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> field bat used 0 Bat </identifier>
+<symbol> . </symbol>
+<identifier> subroutine move used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> subroutine moveBall used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Sys used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine wait used </identifier>
+<symbol> ( </symbol>
+<integerConstant> 50 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field exit used 3 boolean </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> class Output used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine moveCursor used </identifier>
+<symbol> ( </symbol>
+<integerConstant> 10 </integerConstant>
+<symbol> , </symbol>
+<integerConstant> 27 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Output used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine printString used </identifier>
+<symbol> ( </symbol>
+<stringConstant> "Game Over" </stringConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine moveBall defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<identifier> var bouncingDirection defined 0 </identifier>
+<symbol> , </symbol>
+<identifier> var batLeft defined 1 </identifier>
+<symbol> , </symbol>
+<identifier> var batRight defined 2 </identifier>
+<symbol> , </symbol>
+<identifier> var ballLeft defined 3 </identifier>
+<symbol> , </symbol>
+<identifier> var ballRight defined 4 </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field wall used 2 int </identifier>
+<symbol> = </symbol>
+<identifier> field ball used 1 Ball </identifier>
+<symbol> . </symbol>
+<identifier> subroutine move used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<symbol> ( </symbol>
+<identifier> field wall used 2 int </identifier>
+<symbol> &gt; </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ) </symbol>
+<symbol> &amp; </symbol>
+<symbol> ( </symbol>
+<symbol> ~ </symbol>
+<symbol> ( </symbol>
+<identifier> field wall used 2 int </identifier>
+<symbol> = </symbol>
+<identifier> field lastWall used 5 int </identifier>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field lastWall used 5 int </identifier>
+<symbol> = </symbol>
+<identifier> field wall used 2 int </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var bouncingDirection used 0 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var batLeft used 1 int </identifier>
+<symbol> = </symbol>
+<identifier> field bat used 0 Bat </identifier>
+<symbol> . </symbol>
+<identifier> subroutine getLeft used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var batRight used 2 int </identifier>
+<symbol> = </symbol>
+<identifier> field bat used 0 Bat </identifier>
+<symbol> . </symbol>
+<identifier> subroutine getRight used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var ballLeft used 3 int </identifier>
+<symbol> = </symbol>
+<identifier> field ball used 1 Ball </identifier>
+<symbol> . </symbol>
+<identifier> subroutine getLeft used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var ballRight used 4 int </identifier>
+<symbol> = </symbol>
+<identifier> field ball used 1 Ball </identifier>
+<symbol> . </symbol>
+<identifier> subroutine getRight used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field wall used 2 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 4 </integerConstant>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field exit used 3 boolean </identifier>
+<symbol> = </symbol>
+<symbol> ( </symbol>
+<identifier> var batLeft used 1 int </identifier>
+<symbol> &gt; </symbol>
+<identifier> var ballRight used 4 int </identifier>
+<symbol> ) </symbol>
+<symbol> | </symbol>
+<symbol> ( </symbol>
+<identifier> var batRight used 2 int </identifier>
+<symbol> &lt; </symbol>
+<identifier> var ballLeft used 3 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<symbol> ~ </symbol>
+<identifier> field exit used 3 boolean </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> var ballRight used 4 int </identifier>
+<symbol> &lt; </symbol>
+<symbol> ( </symbol>
+<identifier> var batLeft used 1 int </identifier>
+<symbol> + </symbol>
+<integerConstant> 10 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var bouncingDirection used 0 int </identifier>
+<symbol> = </symbol>
+<symbol> - </symbol>
+<integerConstant> 1 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> var ballLeft used 3 int </identifier>
+<symbol> &gt; </symbol>
+<symbol> ( </symbol>
+<identifier> var batRight used 2 int </identifier>
+<symbol> - </symbol>
+<integerConstant> 10 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var bouncingDirection used 0 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 1 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<keyword> let </keyword>
+<identifier> field batWidth used 6 int </identifier>
+<symbol> = </symbol>
+<identifier> field batWidth used 6 int </identifier>
+<symbol> - </symbol>
+<integerConstant> 2 </integerConstant>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> field bat used 0 Bat </identifier>
+<symbol> . </symbol>
+<identifier> subroutine setWidth used </identifier>
+<symbol> ( </symbol>
+<identifier> field batWidth used 6 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field score used 4 int </identifier>
+<symbol> = </symbol>
+<identifier> field score used 4 int </identifier>
+<symbol> + </symbol>
+<integerConstant> 1 </integerConstant>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Output used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine moveCursor used </identifier>
+<symbol> ( </symbol>
+<integerConstant> 22 </integerConstant>
+<symbol> , </symbol>
+<integerConstant> 7 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Output used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine printInt used </identifier>
+<symbol> ( </symbol>
+<identifier> field score used 4 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<keyword> do </keyword>
+<identifier> field ball used 1 Ball </identifier>
+<symbol> . </symbol>
+<identifier> subroutine bounce used </identifier>
+<symbol> ( </symbol>
+<identifier> var bouncingDirection used 0 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+</tokens>

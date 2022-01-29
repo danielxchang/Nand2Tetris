@@ -1,0 +1,40 @@
+<tokens>
+<keyword> class </keyword>
+<identifier> class Main defined </identifier>
+<symbol> { </symbol>
+<keyword> function </keyword>
+<keyword> void </keyword>
+<identifier> subroutine main defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<identifier> var game defined 0 </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var game used 0 SquareGame </identifier>
+<symbol> = </symbol>
+<identifier> class SquareGame used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine new used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> var game used 0 SquareGame </identifier>
+<symbol> . </symbol>
+<identifier> subroutine run used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> var game used 0 SquareGame </identifier>
+<symbol> . </symbol>
+<identifier> subroutine dispose used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+</tokens>

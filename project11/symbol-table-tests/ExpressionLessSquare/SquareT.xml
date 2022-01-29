@@ -1,0 +1,442 @@
+<tokens>
+<keyword> class </keyword>
+<identifier> class Square defined </identifier>
+<symbol> { </symbol>
+<identifier> field x defined 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y defined 1 </identifier>
+<symbol> ; </symbol>
+<identifier> field size defined 2 </identifier>
+<symbol> ; </symbol>
+<keyword> constructor </keyword>
+<identifier> Square </identifier>
+<identifier> subroutine new defined </identifier>
+<symbol> ( </symbol>
+<identifier> argument Ax defined 1 </identifier>
+<symbol> , </symbol>
+<identifier> argument Ay defined 2 </identifier>
+<symbol> , </symbol>
+<identifier> argument Asize defined 3 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field x used 0 </identifier>
+<symbol> = </symbol>
+<identifier> arg Ax used 1 </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field y used 1 </identifier>
+<symbol> = </symbol>
+<identifier> arg Ay used 2 </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field size used 2 </identifier>
+<symbol> = </symbol>
+<identifier> arg Asize used 3 </identifier>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> subroutine draw used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<identifier> field x used 0 </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine dispose defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> class Memory used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine deAlloc used </identifier>
+<symbol> ( </symbol>
+<keyword> this </keyword>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine draw defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine setColor used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine drawRectangle used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> , </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine erase defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine setColor used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine drawRectangle used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> , </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine incSize defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> subroutine erase used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field size used 2 </identifier>
+<symbol> = </symbol>
+<identifier> field size used 2 </identifier>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> subroutine draw used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine decSize defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field size used 2 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> subroutine erase used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field size used 2 </identifier>
+<symbol> = </symbol>
+<identifier> field size used 2 </identifier>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> subroutine draw used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine moveUp defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine setColor used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine drawRectangle used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> , </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field y used 1 </identifier>
+<symbol> = </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine setColor used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine drawRectangle used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> , </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine moveDown defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine setColor used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine drawRectangle used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> , </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field y used 1 </identifier>
+<symbol> = </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine setColor used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine drawRectangle used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> , </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine moveLeft defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine setColor used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine drawRectangle used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> , </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field x used 0 </identifier>
+<symbol> = </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine setColor used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine drawRectangle used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> , </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine moveRight defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine setColor used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine drawRectangle used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> , </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field x used 0 </identifier>
+<symbol> = </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine setColor used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine drawRectangle used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> , </symbol>
+<identifier> field x used 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+</tokens>

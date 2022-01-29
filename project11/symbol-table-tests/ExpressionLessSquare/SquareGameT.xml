@@ -1,0 +1,260 @@
+<tokens>
+<keyword> class </keyword>
+<identifier> class SquareGame defined </identifier>
+<symbol> { </symbol>
+<identifier> field square defined 0 </identifier>
+<symbol> ; </symbol>
+<identifier> field direction defined 1 </identifier>
+<symbol> ; </symbol>
+<keyword> constructor </keyword>
+<identifier> SquareGame </identifier>
+<identifier> subroutine new defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field square used 0 </identifier>
+<symbol> = </symbol>
+<identifier> field square used 0 </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field direction used 1 </identifier>
+<symbol> = </symbol>
+<identifier> field direction used 1 </identifier>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<identifier> field square used 0 </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine dispose defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> field square used 0 </identifier>
+<symbol> . </symbol>
+<identifier> subroutine dispose used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Memory used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine deAlloc used </identifier>
+<symbol> ( </symbol>
+<identifier> field square used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine moveSquare defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field direction used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> field square used 0 </identifier>
+<symbol> . </symbol>
+<identifier> subroutine moveUp used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field direction used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> field square used 0 </identifier>
+<symbol> . </symbol>
+<identifier> subroutine moveDown used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field direction used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> field square used 0 </identifier>
+<symbol> . </symbol>
+<identifier> subroutine moveLeft used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field direction used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> field square used 0 </identifier>
+<symbol> . </symbol>
+<identifier> subroutine moveRight used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> do </keyword>
+<identifier> class Sys used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine wait used </identifier>
+<symbol> ( </symbol>
+<identifier> field direction used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine run defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<identifier> var key defined 0 </identifier>
+<symbol> ; </symbol>
+<identifier> var exit defined 1 </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var exit used 1 </identifier>
+<symbol> = </symbol>
+<identifier> var key used 0 </identifier>
+<symbol> ; </symbol>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<identifier> var exit used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<identifier> var key used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var key used 0 </identifier>
+<symbol> = </symbol>
+<identifier> var key used 0 </identifier>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> subroutine moveSquare used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> var key used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var exit used 1 </identifier>
+<symbol> = </symbol>
+<identifier> var exit used 1 </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> var key used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> field square used 0 </identifier>
+<symbol> . </symbol>
+<identifier> subroutine decSize used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> var key used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> field square used 0 </identifier>
+<symbol> . </symbol>
+<identifier> subroutine incSize used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> var key used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field direction used 1 </identifier>
+<symbol> = </symbol>
+<identifier> var exit used 1 </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> var key used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field direction used 1 </identifier>
+<symbol> = </symbol>
+<identifier> var key used 0 </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> var key used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field direction used 1 </identifier>
+<symbol> = </symbol>
+<identifier> field square used 0 </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> var key used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field direction used 1 </identifier>
+<symbol> = </symbol>
+<identifier> field direction used 1 </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<identifier> var key used 0 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var key used 0 </identifier>
+<symbol> = </symbol>
+<identifier> var key used 0 </identifier>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> subroutine moveSquare used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+</tokens>
