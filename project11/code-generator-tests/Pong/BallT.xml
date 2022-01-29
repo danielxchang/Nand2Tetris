@@ -1,0 +1,856 @@
+<tokens>
+<keyword> class </keyword>
+<identifier> class Ball defined </identifier>
+<symbol> { </symbol>
+<identifier> field x defined 0 </identifier>
+<symbol> , </symbol>
+<identifier> field y defined 1 </identifier>
+<symbol> ; </symbol>
+<identifier> field lengthx defined 2 </identifier>
+<symbol> , </symbol>
+<identifier> field lengthy defined 3 </identifier>
+<symbol> ; </symbol>
+<identifier> field d defined 4 </identifier>
+<symbol> , </symbol>
+<identifier> field straightD defined 5 </identifier>
+<symbol> , </symbol>
+<identifier> field diagonalD defined 6 </identifier>
+<symbol> ; </symbol>
+<identifier> field invert defined 7 </identifier>
+<symbol> , </symbol>
+<identifier> field positivex defined 8 </identifier>
+<symbol> , </symbol>
+<identifier> field positivey defined 9 </identifier>
+<symbol> ; </symbol>
+<identifier> field leftWall defined 10 </identifier>
+<symbol> , </symbol>
+<identifier> field rightWall defined 11 </identifier>
+<symbol> , </symbol>
+<identifier> field topWall defined 12 </identifier>
+<symbol> , </symbol>
+<identifier> field bottomWall defined 13 </identifier>
+<symbol> ; </symbol>
+<identifier> field wall defined 14 </identifier>
+<symbol> ; </symbol>
+<keyword> constructor </keyword>
+<identifier> Ball </identifier>
+<identifier> subroutine new defined </identifier>
+<symbol> ( </symbol>
+<identifier> arg Ax defined 0 </identifier>
+<symbol> , </symbol>
+<identifier> arg Ay defined 1 </identifier>
+<symbol> , </symbol>
+<identifier> arg AleftWall defined 2 </identifier>
+<symbol> , </symbol>
+<identifier> arg ArightWall defined 3 </identifier>
+<symbol> , </symbol>
+<identifier> arg AtopWall defined 4 </identifier>
+<symbol> , </symbol>
+<identifier> arg AbottomWall defined 5 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field x used 0 int </identifier>
+<symbol> = </symbol>
+<identifier> arg Ax used 0 int </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field y used 1 int </identifier>
+<symbol> = </symbol>
+<identifier> arg Ay used 1 int </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field leftWall used 10 int </identifier>
+<symbol> = </symbol>
+<identifier> arg AleftWall used 2 int </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field rightWall used 11 int </identifier>
+<symbol> = </symbol>
+<identifier> arg ArightWall used 3 int </identifier>
+<symbol> - </symbol>
+<integerConstant> 6 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field topWall used 12 int </identifier>
+<symbol> = </symbol>
+<identifier> arg AtopWall used 4 int </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field bottomWall used 13 int </identifier>
+<symbol> = </symbol>
+<identifier> arg AbottomWall used 5 int </identifier>
+<symbol> - </symbol>
+<integerConstant> 6 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field wall used 14 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> subroutine show used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<keyword> this </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine dispose defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> class Memory used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine deAlloc used </identifier>
+<symbol> ( </symbol>
+<keyword> this </keyword>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine show defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine setColor used </identifier>
+<symbol> ( </symbol>
+<keyword> true </keyword>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> subroutine draw used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine hide defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine setColor used </identifier>
+<symbol> ( </symbol>
+<keyword> false </keyword>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> subroutine draw used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine draw defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> class Screen used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine drawRectangle used </identifier>
+<symbol> ( </symbol>
+<identifier> field x used 0 int </identifier>
+<symbol> , </symbol>
+<identifier> field y used 1 int </identifier>
+<symbol> , </symbol>
+<identifier> field x used 0 int </identifier>
+<symbol> + </symbol>
+<integerConstant> 5 </integerConstant>
+<symbol> , </symbol>
+<identifier> field y used 1 int </identifier>
+<symbol> + </symbol>
+<integerConstant> 5 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> int </keyword>
+<identifier> subroutine getLeft defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> return </keyword>
+<identifier> field x used 0 int </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> int </keyword>
+<identifier> subroutine getRight defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> return </keyword>
+<identifier> field x used 0 int </identifier>
+<symbol> + </symbol>
+<integerConstant> 5 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine setDestination defined </identifier>
+<symbol> ( </symbol>
+<identifier> arg destx defined 1 </identifier>
+<symbol> , </symbol>
+<identifier> arg desty defined 2 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<identifier> var dx defined 0 </identifier>
+<symbol> , </symbol>
+<identifier> var dy defined 1 </identifier>
+<symbol> , </symbol>
+<identifier> var temp defined 2 </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field lengthx used 2 int </identifier>
+<symbol> = </symbol>
+<identifier> arg destx used 1 int </identifier>
+<symbol> - </symbol>
+<identifier> field x used 0 int </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field lengthy used 3 int </identifier>
+<symbol> = </symbol>
+<identifier> arg desty used 2 int </identifier>
+<symbol> - </symbol>
+<identifier> field y used 1 int </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var dx used 0 int </identifier>
+<symbol> = </symbol>
+<identifier> class Math used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine abs used </identifier>
+<symbol> ( </symbol>
+<identifier> field lengthx used 2 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var dy used 1 int </identifier>
+<symbol> = </symbol>
+<identifier> class Math used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine abs used </identifier>
+<symbol> ( </symbol>
+<identifier> field lengthy used 3 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field invert used 7 boolean </identifier>
+<symbol> = </symbol>
+<symbol> ( </symbol>
+<identifier> var dx used 0 int </identifier>
+<symbol> &lt; </symbol>
+<identifier> var dy used 1 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field invert used 7 boolean </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var temp used 2 int </identifier>
+<symbol> = </symbol>
+<identifier> var dx used 0 int </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var dx used 0 int </identifier>
+<symbol> = </symbol>
+<identifier> var dy used 1 int </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var dy used 1 int </identifier>
+<symbol> = </symbol>
+<identifier> var temp used 2 int </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field positivex used 8 boolean </identifier>
+<symbol> = </symbol>
+<symbol> ( </symbol>
+<identifier> field y used 1 int </identifier>
+<symbol> &lt; </symbol>
+<identifier> arg desty used 2 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field positivey used 9 boolean </identifier>
+<symbol> = </symbol>
+<symbol> ( </symbol>
+<identifier> field x used 0 int </identifier>
+<symbol> &lt; </symbol>
+<identifier> arg destx used 1 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field positivex used 8 boolean </identifier>
+<symbol> = </symbol>
+<symbol> ( </symbol>
+<identifier> field x used 0 int </identifier>
+<symbol> &lt; </symbol>
+<identifier> arg destx used 1 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field positivey used 9 boolean </identifier>
+<symbol> = </symbol>
+<symbol> ( </symbol>
+<identifier> field y used 1 int </identifier>
+<symbol> &lt; </symbol>
+<identifier> arg desty used 2 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> let </keyword>
+<identifier> field d used 4 int </identifier>
+<symbol> = </symbol>
+<symbol> ( </symbol>
+<integerConstant> 2 </integerConstant>
+<symbol> * </symbol>
+<identifier> var dy used 1 int </identifier>
+<symbol> ) </symbol>
+<symbol> - </symbol>
+<identifier> var dx used 0 int </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field straightD used 5 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 2 </integerConstant>
+<symbol> * </symbol>
+<identifier> var dy used 1 int </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field diagonalD used 6 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 2 </integerConstant>
+<symbol> * </symbol>
+<symbol> ( </symbol>
+<identifier> var dy used 1 int </identifier>
+<symbol> - </symbol>
+<identifier> var dx used 0 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> int </keyword>
+<identifier> subroutine move defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> do </keyword>
+<identifier> subroutine hide used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field d used 4 int </identifier>
+<symbol> &lt; </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field d used 4 int </identifier>
+<symbol> = </symbol>
+<identifier> field d used 4 int </identifier>
+<symbol> + </symbol>
+<identifier> field straightD used 5 int </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field d used 4 int </identifier>
+<symbol> = </symbol>
+<identifier> field d used 4 int </identifier>
+<symbol> + </symbol>
+<identifier> field diagonalD used 6 int </identifier>
+<symbol> ; </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field positivey used 9 boolean </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field invert used 7 boolean </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field x used 0 int </identifier>
+<symbol> = </symbol>
+<identifier> field x used 0 int </identifier>
+<symbol> + </symbol>
+<integerConstant> 4 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field y used 1 int </identifier>
+<symbol> = </symbol>
+<identifier> field y used 1 int </identifier>
+<symbol> + </symbol>
+<integerConstant> 4 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field invert used 7 boolean </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field x used 0 int </identifier>
+<symbol> = </symbol>
+<identifier> field x used 0 int </identifier>
+<symbol> - </symbol>
+<integerConstant> 4 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field y used 1 int </identifier>
+<symbol> = </symbol>
+<identifier> field y used 1 int </identifier>
+<symbol> - </symbol>
+<integerConstant> 4 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field positivex used 8 boolean </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field invert used 7 boolean </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field y used 1 int </identifier>
+<symbol> = </symbol>
+<identifier> field y used 1 int </identifier>
+<symbol> + </symbol>
+<integerConstant> 4 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field x used 0 int </identifier>
+<symbol> = </symbol>
+<identifier> field x used 0 int </identifier>
+<symbol> + </symbol>
+<integerConstant> 4 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field invert used 7 boolean </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field y used 1 int </identifier>
+<symbol> = </symbol>
+<identifier> field y used 1 int </identifier>
+<symbol> - </symbol>
+<integerConstant> 4 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field x used 0 int </identifier>
+<symbol> = </symbol>
+<identifier> field x used 0 int </identifier>
+<symbol> - </symbol>
+<integerConstant> 4 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<symbol> ~ </symbol>
+<symbol> ( </symbol>
+<identifier> field x used 0 int </identifier>
+<symbol> &gt; </symbol>
+<identifier> field leftWall used 10 int </identifier>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field wall used 14 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 1 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field x used 0 int </identifier>
+<symbol> = </symbol>
+<identifier> field leftWall used 10 int </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<symbol> ~ </symbol>
+<symbol> ( </symbol>
+<identifier> field x used 0 int </identifier>
+<symbol> &lt; </symbol>
+<identifier> field rightWall used 11 int </identifier>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field wall used 14 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 2 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field x used 0 int </identifier>
+<symbol> = </symbol>
+<identifier> field rightWall used 11 int </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<symbol> ~ </symbol>
+<symbol> ( </symbol>
+<identifier> field y used 1 int </identifier>
+<symbol> &gt; </symbol>
+<identifier> field topWall used 12 int </identifier>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field wall used 14 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 3 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field y used 1 int </identifier>
+<symbol> = </symbol>
+<identifier> field topWall used 12 int </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<symbol> ~ </symbol>
+<symbol> ( </symbol>
+<identifier> field y used 1 int </identifier>
+<symbol> &lt; </symbol>
+<identifier> field bottomWall used 13 int </identifier>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> field wall used 14 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 4 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> field y used 1 int </identifier>
+<symbol> = </symbol>
+<identifier> field bottomWall used 13 int </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> do </keyword>
+<identifier> subroutine show used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<identifier> field wall used 14 int </identifier>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> method </keyword>
+<keyword> void </keyword>
+<identifier> subroutine bounce defined </identifier>
+<symbol> ( </symbol>
+<identifier> arg bouncingDirection defined 1 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<identifier> var newx defined 0 </identifier>
+<symbol> , </symbol>
+<identifier> var newy defined 1 </identifier>
+<symbol> , </symbol>
+<identifier> var divLengthx defined 2 </identifier>
+<symbol> , </symbol>
+<identifier> var divLengthy defined 3 </identifier>
+<symbol> , </symbol>
+<identifier> var factor defined 4 </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var divLengthx used 2 int </identifier>
+<symbol> = </symbol>
+<identifier> field lengthx used 2 int </identifier>
+<symbol> / </symbol>
+<integerConstant> 10 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var divLengthy used 3 int </identifier>
+<symbol> = </symbol>
+<identifier> field lengthy used 3 int </identifier>
+<symbol> / </symbol>
+<integerConstant> 10 </integerConstant>
+<symbol> ; </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> arg bouncingDirection used 1 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var factor used 4 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 10 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<symbol> ( </symbol>
+<symbol> ( </symbol>
+<symbol> ~ </symbol>
+<symbol> ( </symbol>
+<identifier> field lengthx used 2 int </identifier>
+<symbol> &lt; </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> &amp; </symbol>
+<symbol> ( </symbol>
+<identifier> arg bouncingDirection used 1 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 1 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> | </symbol>
+<symbol> ( </symbol>
+<symbol> ( </symbol>
+<identifier> field lengthx used 2 int </identifier>
+<symbol> &lt; </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ) </symbol>
+<symbol> &amp; </symbol>
+<symbol> ( </symbol>
+<identifier> arg bouncingDirection used 1 int </identifier>
+<symbol> = </symbol>
+<symbol> ( </symbol>
+<symbol> - </symbol>
+<integerConstant> 1 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var factor used 4 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 20 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var factor used 4 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 5 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field wall used 14 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 1 </integerConstant>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var newx used 0 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 506 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var newy used 1 int </identifier>
+<symbol> = </symbol>
+<symbol> ( </symbol>
+<identifier> var divLengthy used 3 int </identifier>
+<symbol> * </symbol>
+<symbol> ( </symbol>
+<symbol> - </symbol>
+<integerConstant> 50 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> / </symbol>
+<identifier> var divLengthx used 2 int </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var newy used 1 int </identifier>
+<symbol> = </symbol>
+<identifier> field y used 1 int </identifier>
+<symbol> + </symbol>
+<symbol> ( </symbol>
+<identifier> var newy used 1 int </identifier>
+<symbol> * </symbol>
+<identifier> var factor used 4 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field wall used 14 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 2 </integerConstant>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var newx used 0 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var newy used 1 int </identifier>
+<symbol> = </symbol>
+<symbol> ( </symbol>
+<identifier> var divLengthy used 3 int </identifier>
+<symbol> * </symbol>
+<integerConstant> 50 </integerConstant>
+<symbol> ) </symbol>
+<symbol> / </symbol>
+<identifier> var divLengthx used 2 int </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var newy used 1 int </identifier>
+<symbol> = </symbol>
+<identifier> field y used 1 int </identifier>
+<symbol> + </symbol>
+<symbol> ( </symbol>
+<identifier> var newy used 1 int </identifier>
+<symbol> * </symbol>
+<identifier> var factor used 4 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> if </keyword>
+<symbol> ( </symbol>
+<identifier> field wall used 14 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 3 </integerConstant>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var newy used 1 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 250 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var newx used 0 int </identifier>
+<symbol> = </symbol>
+<symbol> ( </symbol>
+<identifier> var divLengthx used 2 int </identifier>
+<symbol> * </symbol>
+<symbol> ( </symbol>
+<symbol> - </symbol>
+<integerConstant> 25 </integerConstant>
+<symbol> ) </symbol>
+<symbol> ) </symbol>
+<symbol> / </symbol>
+<identifier> var divLengthy used 3 int </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var newx used 0 int </identifier>
+<symbol> = </symbol>
+<identifier> field x used 0 int </identifier>
+<symbol> + </symbol>
+<symbol> ( </symbol>
+<identifier> var newx used 0 int </identifier>
+<symbol> * </symbol>
+<identifier> var factor used 4 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> else </keyword>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var newy used 1 int </identifier>
+<symbol> = </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var newx used 0 int </identifier>
+<symbol> = </symbol>
+<symbol> ( </symbol>
+<identifier> var divLengthx used 2 int </identifier>
+<symbol> * </symbol>
+<integerConstant> 25 </integerConstant>
+<symbol> ) </symbol>
+<symbol> / </symbol>
+<identifier> var divLengthy used 3 int </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var newx used 0 int </identifier>
+<symbol> = </symbol>
+<identifier> field x used 0 int </identifier>
+<symbol> + </symbol>
+<symbol> ( </symbol>
+<identifier> var newx used 0 int </identifier>
+<symbol> * </symbol>
+<identifier> var factor used 4 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+<keyword> do </keyword>
+<identifier> subroutine setDestination used </identifier>
+<symbol> ( </symbol>
+<identifier> var newx used 0 int </identifier>
+<symbol> , </symbol>
+<identifier> var newy used 1 int </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+</tokens>

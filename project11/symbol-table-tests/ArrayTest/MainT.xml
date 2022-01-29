@@ -1,0 +1,136 @@
+<tokens>
+<keyword> class </keyword>
+<identifier> class Main defined </identifier>
+<symbol> { </symbol>
+<keyword> function </keyword>
+<keyword> void </keyword>
+<identifier> subroutine main defined </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<identifier> var a defined 0 </identifier>
+<symbol> ; </symbol>
+<identifier> var length defined 1 </identifier>
+<symbol> ; </symbol>
+<identifier> var i defined 2 </identifier>
+<symbol> , </symbol>
+<identifier> var sum defined 3 </identifier>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var length used 1 </identifier>
+<symbol> = </symbol>
+<identifier> class Keyboard used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine readInt used </identifier>
+<symbol> ( </symbol>
+<stringConstant> HOW MANY NUMBERS?  </stringConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var a used 0 </identifier>
+<symbol> = </symbol>
+<identifier> class Array used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine new used </identifier>
+<symbol> ( </symbol>
+<identifier> var length used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var i used 2 </identifier>
+<symbol> = </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ; </symbol>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<identifier> var i used 2 </identifier>
+<symbol> &lt; </symbol>
+<identifier> var length used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var a used 0 </identifier>
+<symbol> [ </symbol>
+<identifier> var i used 2 </identifier>
+<symbol> ] </symbol>
+<symbol> = </symbol>
+<identifier> class Keyboard used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine readInt used </identifier>
+<symbol> ( </symbol>
+<stringConstant> ENTER THE NEXT NUMBER:  </stringConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var i used 2 </identifier>
+<symbol> = </symbol>
+<identifier> var i used 2 </identifier>
+<symbol> + </symbol>
+<integerConstant> 1 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> let </keyword>
+<identifier> var i used 2 </identifier>
+<symbol> = </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var sum used 3 </identifier>
+<symbol> = </symbol>
+<integerConstant> 0 </integerConstant>
+<symbol> ; </symbol>
+<keyword> while </keyword>
+<symbol> ( </symbol>
+<identifier> var i used 2 </identifier>
+<symbol> &lt; </symbol>
+<identifier> var length used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> { </symbol>
+<keyword> let </keyword>
+<identifier> var sum used 3 </identifier>
+<symbol> = </symbol>
+<identifier> var sum used 3 </identifier>
+<symbol> + </symbol>
+<identifier> var a used 0 </identifier>
+<symbol> [ </symbol>
+<identifier> var i used 2 </identifier>
+<symbol> ] </symbol>
+<symbol> ; </symbol>
+<keyword> let </keyword>
+<identifier> var i used 2 </identifier>
+<symbol> = </symbol>
+<identifier> var i used 2 </identifier>
+<symbol> + </symbol>
+<integerConstant> 1 </integerConstant>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<keyword> do </keyword>
+<identifier> class Output used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine printString used </identifier>
+<symbol> ( </symbol>
+<stringConstant> THE AVERAGE IS:  </stringConstant>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Output used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine printInt used </identifier>
+<symbol> ( </symbol>
+<identifier> var sum used 3 </identifier>
+<symbol> / </symbol>
+<identifier> var length used 1 </identifier>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> do </keyword>
+<identifier> class Output used </identifier>
+<symbol> . </symbol>
+<identifier> subroutine println used </identifier>
+<symbol> ( </symbol>
+<symbol> ) </symbol>
+<symbol> ; </symbol>
+<keyword> return </keyword>
+<symbol> ; </symbol>
+<symbol> } </symbol>
+<symbol> } </symbol>
+</tokens>
